@@ -17,7 +17,9 @@ namespace IndieGameDevHub
 			InitializeComponent();
 		}
 
+
 		int currentLoginId = 1;
+        
 
 		private void frmLogin_Load(object sender, EventArgs e)
 		{
@@ -64,9 +66,11 @@ namespace IndieGameDevHub
 		{
 			if (isRightLogin())
 			{
-				// success
+                // success
+                getDeveloperId() ;
 				DialogResult = DialogResult.OK;
-			}
+                
+            }
 			else
 			{
 				// Failure
@@ -74,6 +78,34 @@ namespace IndieGameDevHub
 			}
 
 		}
+
+        private void getDeveloperId()
+        {
+            string currentUser = txtUser.Text;
+            string currentPassword = txtPassword.Text;
+           
+            string[] sqlStatements = new string[]
+            {
+                $@"	SELECT DeveloperDeveloperId 
+					FROM Logins 
+					WHERE [User] = '{currentUser}'
+					AND [Password] = '{currentPassword}'
+                "
+            };
+
+            DataSet ds = new DataSet();
+            ds = DataAccess.GetData(sqlStatements);
+
+            if (ds.Tables[0].Rows.Count == 1)
+            {
+                DataRow selectedDeveloperId = ds.Tables[0].Rows[0];
+                LoggedInUserInfo.CurrentDeveloperId = Convert.ToInt32(selectedDeveloperId["DeveloperDeveloperId"]);
+            }
+            else
+            {
+                MessageBox.Show("Developer Id not found");
+            }
+        }
 
         private bool isRightLogin()
         {
@@ -88,7 +120,8 @@ namespace IndieGameDevHub
                 $@"	SELECT * 
 					FROM Logins 
 					WHERE [User] = '{currentUser}'
-					AND [Password] = '{currentPassword}'"
+					AND [Password] = '{currentPassword}'
+                "
            };
 
             DataSet ds = new DataSet();

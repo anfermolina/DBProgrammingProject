@@ -1,348 +1,332 @@
 ﻿namespace IndieGameDevHub
 {
-	partial class frmDevelopers
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class frmDevelopers
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			label1 = new Label();
-			label2 = new Label();
-			label3 = new Label();
-			label4 = new Label();
-			label5 = new Label();
-			label6 = new Label();
-			label7 = new Label();
-			label8 = new Label();
-			label9 = new Label();
-			label10 = new Label();
-			label11 = new Label();
-			button9 = new Button();
-			button8 = new Button();
-			button7 = new Button();
-			button6 = new Button();
-			button5 = new Button();
-			button4 = new Button();
-			button3 = new Button();
-			button2 = new Button();
-			button1 = new Button();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
-			textBox3 = new TextBox();
-			textBox4 = new TextBox();
-			textBox5 = new TextBox();
-			textBox6 = new TextBox();
-			SuspendLayout();
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-			label1.Location = new Point(340, 31);
-			label1.Name = "label1";
-			label1.Size = new Size(114, 28);
-			label1.TabIndex = 0;
-			label1.Text = "DEVELOPER";
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(109, 90);
-			label2.Name = "label2";
-			label2.Size = new Size(64, 15);
-			label2.TabIndex = 1;
-			label2.Text = "First Name";
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Location = new Point(432, 90);
-			label3.Name = "label3";
-			label3.Size = new Size(63, 15);
-			label3.TabIndex = 2;
-			label3.Text = "Last Name";
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(109, 130);
-			label4.Name = "label4";
-			label4.Size = new Size(76, 15);
-			label4.TabIndex = 3;
-			label4.Text = "Studio Name";
-			// 
-			// label5
-			// 
-			label5.AutoSize = true;
-			label5.Location = new Point(437, 135);
-			label5.Name = "label5";
-			label5.Size = new Size(53, 15);
-			label5.TabIndex = 4;
-			label5.Text = "Location";
-			// 
-			// label6
-			// 
-			label6.AutoSize = true;
-			label6.Location = new Point(113, 169);
-			label6.Name = "label6";
-			label6.Size = new Size(49, 15);
-			label6.TabIndex = 5;
-			label6.Text = "Website";
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Location = new Point(113, 209);
-			label7.Name = "label7";
-			label7.Size = new Size(36, 15);
-			label7.TabIndex = 6;
-			label7.Text = "Email";
-			// 
-			// label8
-			// 
-			label8.AutoSize = true;
-			label8.Location = new Point(220, 255);
-			label8.Name = "label8";
-			label8.Size = new Size(44, 15);
-			label8.TabIndex = 7;
-			label8.Text = "Project";
-			// 
-			// label9
-			// 
-			label9.AutoSize = true;
-			label9.Location = new Point(337, 255);
-			label9.Name = "label9";
-			label9.Size = new Size(30, 15);
-			label9.TabIndex = 8;
-			label9.Text = "Role";
-			// 
-			// label10
-			// 
-			label10.AutoSize = true;
-			label10.Location = new Point(436, 255);
-			label10.Name = "label10";
-			label10.Size = new Size(58, 15);
-			label10.TabIndex = 9;
-			label10.Text = "Start Date";
-			// 
-			// label11
-			// 
-			label11.AutoSize = true;
-			label11.Location = new Point(558, 255);
-			label11.Name = "label11";
-			label11.Size = new Size(54, 15);
-			label11.TabIndex = 10;
-			label11.Text = "End Date";
-			// 
-			// button9
-			// 
-			button9.Location = new Point(536, 345);
-			button9.Name = "button9";
-			button9.Size = new Size(103, 32);
-			button9.TabIndex = 29;
-			button9.Text = "Last";
-			button9.UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			button8.Location = new Point(415, 345);
-			button8.Name = "button8";
-			button8.Size = new Size(103, 32);
-			button8.TabIndex = 28;
-			button8.Text = "Next";
-			button8.UseVisualStyleBackColor = true;
-			// 
-			// button7
-			// 
-			button7.Location = new Point(306, 345);
-			button7.Name = "button7";
-			button7.Size = new Size(103, 32);
-			button7.TabIndex = 27;
-			button7.Text = "Prev";
-			button7.UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			button6.Location = new Point(176, 345);
-			button6.Name = "button6";
-			button6.Size = new Size(103, 32);
-			button6.TabIndex = 26;
-			button6.Text = "First";
-			button6.UseVisualStyleBackColor = true;
-			// 
-			// button5
-			// 
-			button5.Location = new Point(609, 397);
-			button5.Name = "button5";
-			button5.Size = new Size(103, 32);
-			button5.TabIndex = 25;
-			button5.Text = "Exit";
-			button5.UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			button4.Location = new Point(484, 397);
-			button4.Name = "button4";
-			button4.Size = new Size(103, 32);
-			button4.TabIndex = 24;
-			button4.Text = "Cancel";
-			button4.UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			button3.Location = new Point(355, 397);
-			button3.Name = "button3";
-			button3.Size = new Size(103, 32);
-			button3.TabIndex = 23;
-			button3.Text = "Delete";
-			button3.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			button2.Location = new Point(225, 397);
-			button2.Name = "button2";
-			button2.Size = new Size(103, 32);
-			button2.TabIndex = 22;
-			button2.Text = "Update";
-			button2.UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			button1.Location = new Point(99, 397);
-			button1.Name = "button1";
-			button1.Size = new Size(103, 32);
-			button1.TabIndex = 21;
-			button1.Text = "Add";
-			button1.UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			textBox1.Location = new Point(188, 87);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(173, 23);
-			textBox1.TabIndex = 30;
-			// 
-			// textBox2
-			// 
-			textBox2.Location = new Point(521, 87);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(173, 23);
-			textBox2.TabIndex = 31;
-			// 
-			// textBox3
-			// 
-			textBox3.Location = new Point(191, 127);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(173, 23);
-			textBox3.TabIndex = 32;
-			// 
-			// textBox4
-			// 
-			textBox4.Location = new Point(521, 132);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(173, 23);
-			textBox4.TabIndex = 33;
-			// 
-			// textBox5
-			// 
-			textBox5.Location = new Point(188, 169);
-			textBox5.Name = "textBox5";
-			textBox5.Size = new Size(176, 23);
-			textBox5.TabIndex = 34;
-			// 
-			// textBox6
-			// 
-			textBox6.Location = new Point(188, 209);
-			textBox6.Name = "textBox6";
-			textBox6.Size = new Size(176, 23);
-			textBox6.TabIndex = 35;
-			// 
-			// frmDevelopers
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(842, 466);
-			Controls.Add(textBox6);
-			Controls.Add(textBox5);
-			Controls.Add(textBox4);
-			Controls.Add(textBox3);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
-			Controls.Add(button9);
-			Controls.Add(button8);
-			Controls.Add(button7);
-			Controls.Add(button6);
-			Controls.Add(button5);
-			Controls.Add(button4);
-			Controls.Add(button3);
-			Controls.Add(button2);
-			Controls.Add(button1);
-			Controls.Add(label11);
-			Controls.Add(label10);
-			Controls.Add(label9);
-			Controls.Add(label8);
-			Controls.Add(label7);
-			Controls.Add(label6);
-			Controls.Add(label5);
-			Controls.Add(label4);
-			Controls.Add(label3);
-			Controls.Add(label2);
-			Controls.Add(label1);
-			Name = "frmDevelopers";
-			Text = "frmDevelopers";
-			ResumeLayout(false);
-			PerformLayout();
-		}
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            lblFirstName = new Label();
+            lblLastName = new Label();
+            lblStudioName = new Label();
+            lblLocation = new Label();
+            lblWebsite = new Label();
+            lblEmail = new Label();
+            btnLast = new Button();
+            btnNext = new Button();
+            btnPrevious = new Button();
+            btnFirst = new Button();
+            btnExit = new Button();
+            btnCancel = new Button();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
+            txtStudioName = new TextBox();
+            txtLocation = new TextBox();
+            txtWebsite = new TextBox();
+            txtEmail = new TextBox();
+            lblDeveloperId = new Label();
+            txtDeveloperId = new TextBox();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(340, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 28);
+            label1.TabIndex = 0;
+            label1.Text = "DEVELOPER";
+            // 
+            // lblFirstName
+            // 
+            lblFirstName.AutoSize = true;
+            lblFirstName.Location = new Point(109, 119);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new Size(64, 15);
+            lblFirstName.TabIndex = 1;
+            lblFirstName.Text = "First Name";
+            // 
+            // lblLastName
+            // 
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(432, 119);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(63, 15);
+            lblLastName.TabIndex = 2;
+            lblLastName.Text = "Last Name";
+            // 
+            // lblStudioName
+            // 
+            lblStudioName.AutoSize = true;
+            lblStudioName.Location = new Point(109, 159);
+            lblStudioName.Name = "lblStudioName";
+            lblStudioName.Size = new Size(76, 15);
+            lblStudioName.TabIndex = 3;
+            lblStudioName.Text = "Studio Name";
+            // 
+            // lblLocation
+            // 
+            lblLocation.AutoSize = true;
+            lblLocation.Location = new Point(432, 164);
+            lblLocation.Name = "lblLocation";
+            lblLocation.Size = new Size(53, 15);
+            lblLocation.TabIndex = 4;
+            lblLocation.Text = "Location";
+            // 
+            // lblWebsite
+            // 
+            lblWebsite.AutoSize = true;
+            lblWebsite.Location = new Point(108, 198);
+            lblWebsite.Name = "lblWebsite";
+            lblWebsite.Size = new Size(49, 15);
+            lblWebsite.TabIndex = 5;
+            lblWebsite.Text = "Website";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(108, 238);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 6;
+            lblEmail.Text = "Email";
+            // 
+            // btnLast
+            // 
+            btnLast.Location = new Point(536, 345);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new Size(103, 32);
+            btnLast.TabIndex = 29;
+            btnLast.Text = "Last";
+            btnLast.UseVisualStyleBackColor = true;
+            btnLast.Click += Navigation_Handler;
+            // 
+            // btnNext
+            // 
+            btnNext.Location = new Point(409, 345);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(103, 32);
+            btnNext.TabIndex = 28;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += Navigation_Handler;
+            // 
+            // btnPrevious
+            // 
+            btnPrevious.Location = new Point(300, 345);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(103, 32);
+            btnPrevious.TabIndex = 27;
+            btnPrevious.Text = "Prev";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += Navigation_Handler;
+            // 
+            // btnFirst
+            // 
+            btnFirst.Location = new Point(176, 345);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new Size(103, 32);
+            btnFirst.TabIndex = 26;
+            btnFirst.Text = "First";
+            btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Click += Navigation_Handler;
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(609, 397);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(103, 32);
+            btnExit.TabIndex = 25;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(484, 397);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(103, 32);
+            btnCancel.TabIndex = 24;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(355, 397);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(103, 32);
+            btnDelete.TabIndex = 23;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(225, 397);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(103, 32);
+            btnUpdate.TabIndex = 22;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(99, 397);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(103, 32);
+            btnAdd.TabIndex = 21;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // txtFirstName
+            // 
+            txtFirstName.Location = new Point(191, 116);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(173, 23);
+            txtFirstName.TabIndex = 30;
+            // 
+            // txtLastName
+            // 
+            txtLastName.Location = new Point(521, 116);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(173, 23);
+            txtLastName.TabIndex = 31;
+            // 
+            // txtStudioName
+            // 
+            txtStudioName.Location = new Point(191, 156);
+            txtStudioName.Name = "txtStudioName";
+            txtStudioName.Size = new Size(173, 23);
+            txtStudioName.TabIndex = 32;
+            // 
+            // txtLocation
+            // 
+            txtLocation.Location = new Point(521, 161);
+            txtLocation.Name = "txtLocation";
+            txtLocation.Size = new Size(173, 23);
+            txtLocation.TabIndex = 33;
+            // 
+            // txtWebsite
+            // 
+            txtWebsite.Location = new Point(192, 198);
+            txtWebsite.Name = "txtWebsite";
+            txtWebsite.Size = new Size(176, 23);
+            txtWebsite.TabIndex = 34;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(191, 238);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(176, 23);
+            txtEmail.TabIndex = 35;
+            // 
+            // lblDeveloperId
+            // 
+            lblDeveloperId.AutoSize = true;
+            lblDeveloperId.Location = new Point(109, 77);
+            lblDeveloperId.Name = "lblDeveloperId";
+            lblDeveloperId.Size = new Size(73, 15);
+            lblDeveloperId.TabIndex = 36;
+            lblDeveloperId.Text = "Developer Id";
+            // 
+            // txtDeveloperId
+            // 
+            txtDeveloperId.Location = new Point(188, 74);
+            txtDeveloperId.Name = "txtDeveloperId";
+            txtDeveloperId.Size = new Size(76, 23);
+            txtDeveloperId.TabIndex = 37;
+            // 
+            // frmDevelopers
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(842, 466);
+            Controls.Add(txtDeveloperId);
+            Controls.Add(lblDeveloperId);
+            Controls.Add(txtEmail);
+            Controls.Add(txtWebsite);
+            Controls.Add(txtLocation);
+            Controls.Add(txtStudioName);
+            Controls.Add(txtLastName);
+            Controls.Add(txtFirstName);
+            Controls.Add(btnLast);
+            Controls.Add(btnNext);
+            Controls.Add(btnPrevious);
+            Controls.Add(btnFirst);
+            Controls.Add(btnExit);
+            Controls.Add(btnCancel);
+            Controls.Add(btnDelete);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAdd);
+            Controls.Add(lblEmail);
+            Controls.Add(lblWebsite);
+            Controls.Add(lblLocation);
+            Controls.Add(lblStudioName);
+            Controls.Add(lblLastName);
+            Controls.Add(lblFirstName);
+            Controls.Add(label1);
+            Name = "frmDevelopers";
+            Text = "frmDevelopers";
+            Load += frmDevelopers_Load;
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-		#endregion
+        #endregion
 
-		private Label label1;
-		private Label label2;
-		private Label label3;
-		private Label label4;
-		private Label label5;
-		private Label label6;
-		private Label label7;
-		private Label label8;
-		private Label label9;
-		private Label label10;
-		private Label label11;
-		private Button button9;
-		private Button button8;
-		private Button button7;
-		private Button button6;
-		private Button button5;
-		private Button button4;
-		private Button button3;
-		private Button button2;
-		private Button button1;
-		private TextBox textBox1;
-		private TextBox textBox2;
-		private TextBox textBox3;
-		private TextBox textBox4;
-		private TextBox textBox5;
-		private TextBox textBox6;
-	}
+        private Label label1;
+        private Label lblFirstName;
+        private Label lblLastName;
+        private Label lblStudioName;
+        private Label lblLocation;
+        private Label lblWebsite;
+        private Label lblEmail;
+        private Button btnLast;
+        private Button btnNext;
+        private Button btnPrevious;
+        private Button btnFirst;
+        private Button btnExit;
+        private Button btnCancel;
+        private Button btnDelete;
+        private Button btnUpdate;
+        private Button btnAdd;
+        private TextBox txtFirstName;
+        private TextBox txtLastName;
+        private TextBox txtStudioName;
+        private TextBox txtLocation;
+        private TextBox txtWebsite;
+        private TextBox txtEmail;
+        private Label lblDeveloperId;
+        private TextBox txtDeveloperId;
+    }
 }
