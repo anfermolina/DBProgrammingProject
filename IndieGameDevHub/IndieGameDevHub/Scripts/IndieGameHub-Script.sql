@@ -77,3 +77,146 @@ CREATE TABLE ProjectContributors(
     CONSTRAINT [FK_ProjectContributors_Projects] FOREIGN KEY ([ProjectProjectId]) REFERENCES Projects([ProjectId])
 )
 GO
+
+-- Data for Developers Table
+INSERT INTO Developers 
+	(
+	FirstName
+	, LastName
+	, StudioName
+	, [Location]
+	, Website
+	, Email) 
+VALUES 
+	(
+	'Anfer'
+	, 'Retro'
+	, 'PixelDreams'
+	, 'Moncton'
+	, 'www.pixeldreams.com'
+	, 'anfer@pixeldreams.com'
+	),
+
+	(
+	'Sam'
+	, 'Quest'
+	, 'EpicVentures'
+	, 'New York'
+	, 'www.epicventures.com'
+	, 'sam@epicventures.com'
+	),
+	(
+	'Eva'
+	, 'Blade'
+	, 'FutureRealms'
+	, 'Austin'
+	, 'www.futurerealms.com'
+	, 'eva@futurerealms.com'
+	)
+GO
+
+INSERT INTO Logins 
+	(
+	[User]
+	, [Password]
+	, DeveloperDeveloperId) 
+VALUES 
+	(
+	'alexretro'
+	, 'password123'
+	, 1
+	),
+	(
+	'samquest'
+	, 'epicpass456'
+	, 2
+	),
+	(
+	'evablade'
+	, 'realm789'
+	, 3
+	)
+GO
+
+INSERT INTO Projects 
+	(
+	Title
+	, Genre
+	, Engine
+	, EsrbRating
+	, DimensionType
+	, Description
+	, StartDate
+	, EstimatedCompletionDate
+	, StatusOfTheProject
+	) 
+VALUES 
+	(
+	'AdventureQuest'
+	, 'RPG'
+	, 'Unreal Engine'
+	, 'E'
+	, '3D'
+	, 'An epic role-playing adventure set in a fantasy world'
+	, '2021-01-01'
+	, '2023-12-31'
+	, 'active'
+	),
+	(
+	'CyberRacer'
+	, 'Racing'
+	, 'Unity'
+	, 'E10+'
+	, '2D'
+	, 'Futuristic racing game with cybernetic enhancements'
+	, '2022-02-15'
+	, '2024-06-30'
+	, 'inactive'
+	),
+	(
+	'Mystery of Eldoria'
+	, 'Adventure'
+	, 'Godot'
+	, 'T'
+	, '2.5D'
+	, 'Solve mysteries in the mystical land of Eldoria.'
+	, '2021-06-01'
+	, '2024-11-15'
+	, 'active'
+	)
+GO
+
+INSERT INTO ProjectContributors 
+	(
+	DeveloperDeveloperId
+	, ProjectProjectId
+	, [Role]
+	, StartDate
+	, EndDate
+	) 
+VALUES 
+	(
+	1
+	, 1
+	, 'Lead Developer'
+	, '2021-01-01'
+	, NULL
+	),
+	(
+	2
+	, 2
+	, 'Game Designer'
+	, '2022-02-15'
+	, NULL
+	),
+	(
+	3
+	, 3, 
+	'Art Director'
+	, '2021-06-01'
+	, '2023-11-15'
+	)
+GO
+
+
+

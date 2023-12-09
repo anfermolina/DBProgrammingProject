@@ -1,390 +1,399 @@
 ﻿namespace IndieGameDevHub
 {
-	partial class frmProjects
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class frmProjects
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			label1 = new Label();
-			label2 = new Label();
-			label3 = new Label();
-			label4 = new Label();
-			label5 = new Label();
-			label6 = new Label();
-			label7 = new Label();
-			label8 = new Label();
-			label9 = new Label();
-			label10 = new Label();
-			label11 = new Label();
-			label12 = new Label();
-			button1 = new Button();
-			button2 = new Button();
-			button3 = new Button();
-			button4 = new Button();
-			button5 = new Button();
-			button6 = new Button();
-			button7 = new Button();
-			button8 = new Button();
-			button9 = new Button();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
-			textBox3 = new TextBox();
-			textBox4 = new TextBox();
-			textBox5 = new TextBox();
-			textBox6 = new TextBox();
-			textBox7 = new TextBox();
-			textBox8 = new TextBox();
-			textBox9 = new TextBox();
-			SuspendLayout();
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-			label1.Location = new Point(344, 60);
-			label1.Name = "label1";
-			label1.Size = new Size(100, 28);
-			label1.TabIndex = 0;
-			label1.Text = "PROJECTS";
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(141, 97);
-			label2.Name = "label2";
-			label2.Size = new Size(29, 15);
-			label2.TabIndex = 1;
-			label2.Text = "Title";
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Location = new Point(430, 130);
-			label3.Name = "label3";
-			label3.Size = new Size(43, 15);
-			label3.TabIndex = 2;
-			label3.Text = "Engine";
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(141, 124);
-			label4.Name = "label4";
-			label4.Size = new Size(38, 15);
-			label4.TabIndex = 3;
-			label4.Text = "Genre";
-			// 
-			// label5
-			// 
-			label5.AutoSize = true;
-			label5.Location = new Point(430, 165);
-			label5.Name = "label5";
-			label5.Size = new Size(70, 15);
-			label5.TabIndex = 4;
-			label5.Text = "ESRB Rating";
-			// 
-			// label6
-			// 
-			label6.AutoSize = true;
-			label6.Location = new Point(141, 165);
-			label6.Name = "label6";
-			label6.Size = new Size(88, 15);
-			label6.TabIndex = 5;
-			label6.Text = "DimensionType";
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Location = new Point(141, 201);
-			label7.Name = "label7";
-			label7.Size = new Size(67, 15);
-			label7.TabIndex = 6;
-			label7.Text = "Description";
-			// 
-			// label8
-			// 
-			label8.AutoSize = true;
-			label8.Location = new Point(141, 232);
-			label8.Name = "label8";
-			label8.Size = new Size(55, 15);
-			label8.TabIndex = 7;
-			label8.Text = "StartDate";
-			// 
-			// label9
-			// 
-			label9.AutoSize = true;
-			label9.Location = new Point(141, 271);
-			label9.Name = "label9";
-			label9.Size = new Size(152, 15);
-			label9.TabIndex = 8;
-			label9.Text = "Estimated Completion Date";
-			// 
-			// label10
-			// 
-			label10.AutoSize = true;
-			label10.Location = new Point(144, 305);
-			label10.Name = "label10";
-			label10.Size = new Size(117, 15);
-			label10.TabIndex = 9;
-			label10.Text = "Status Of The Project";
-			// 
-			// label11
-			// 
-			label11.AutoSize = true;
-			label11.Location = new Point(282, 331);
-			label11.Name = "label11";
-			label11.Size = new Size(65, 15);
-			label11.TabIndex = 10;
-			label11.Text = "Developers";
-			// 
-			// label12
-			// 
-			label12.AutoSize = true;
-			label12.Location = new Point(457, 331);
-			label12.Name = "label12";
-			label12.Size = new Size(30, 15);
-			label12.TabIndex = 11;
-			label12.Text = "Role";
-			// 
-			// button1
-			// 
-			button1.Location = new Point(125, 453);
-			button1.Name = "button1";
-			button1.Size = new Size(103, 32);
-			button1.TabIndex = 12;
-			button1.Text = "Add";
-			button1.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			button2.Location = new Point(251, 453);
-			button2.Name = "button2";
-			button2.Size = new Size(103, 32);
-			button2.TabIndex = 13;
-			button2.Text = "Update";
-			button2.UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			button3.Location = new Point(381, 453);
-			button3.Name = "button3";
-			button3.Size = new Size(103, 32);
-			button3.TabIndex = 14;
-			button3.Text = "Delete";
-			button3.UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			button4.Location = new Point(510, 453);
-			button4.Name = "button4";
-			button4.Size = new Size(103, 32);
-			button4.TabIndex = 15;
-			button4.Text = "Cancel";
-			button4.UseVisualStyleBackColor = true;
-			// 
-			// button5
-			// 
-			button5.Location = new Point(635, 453);
-			button5.Name = "button5";
-			button5.Size = new Size(103, 32);
-			button5.TabIndex = 16;
-			button5.Text = "Exit";
-			button5.UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			button6.Location = new Point(187, 405);
-			button6.Name = "button6";
-			button6.Size = new Size(103, 32);
-			button6.TabIndex = 17;
-			button6.Text = "First";
-			button6.UseVisualStyleBackColor = true;
-			// 
-			// button7
-			// 
-			button7.Location = new Point(317, 405);
-			button7.Name = "button7";
-			button7.Size = new Size(103, 32);
-			button7.TabIndex = 18;
-			button7.Text = "Prev";
-			button7.UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			button8.Location = new Point(426, 405);
-			button8.Name = "button8";
-			button8.Size = new Size(103, 32);
-			button8.TabIndex = 19;
-			button8.Text = "Next";
-			button8.UseVisualStyleBackColor = true;
-			// 
-			// button9
-			// 
-			button9.Location = new Point(547, 405);
-			button9.Name = "button9";
-			button9.Size = new Size(103, 32);
-			button9.TabIndex = 20;
-			button9.Text = "Last";
-			button9.UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			textBox1.Location = new Point(235, 94);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(200, 23);
-			textBox1.TabIndex = 21;
-			// 
-			// textBox2
-			// 
-			textBox2.Location = new Point(235, 124);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(124, 23);
-			textBox2.TabIndex = 22;
-			// 
-			// textBox3
-			// 
-			textBox3.Location = new Point(526, 127);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(174, 23);
-			textBox3.TabIndex = 23;
-			// 
-			// textBox4
-			// 
-			textBox4.Location = new Point(235, 165);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(124, 23);
-			textBox4.TabIndex = 24;
-			// 
-			// textBox5
-			// 
-			textBox5.Location = new Point(526, 162);
-			textBox5.Name = "textBox5";
-			textBox5.Size = new Size(124, 23);
-			textBox5.TabIndex = 25;
-			// 
-			// textBox6
-			// 
-			textBox6.Location = new Point(235, 201);
-			textBox6.Name = "textBox6";
-			textBox6.Size = new Size(124, 23);
-			textBox6.TabIndex = 26;
-			// 
-			// textBox7
-			// 
-			textBox7.Location = new Point(235, 233);
-			textBox7.Name = "textBox7";
-			textBox7.Size = new Size(124, 23);
-			textBox7.TabIndex = 27;
-			// 
-			// textBox8
-			// 
-			textBox8.Location = new Point(320, 271);
-			textBox8.Name = "textBox8";
-			textBox8.Size = new Size(124, 23);
-			textBox8.TabIndex = 28;
-			// 
-			// textBox9
-			// 
-			textBox9.Location = new Point(320, 302);
-			textBox9.Name = "textBox9";
-			textBox9.Size = new Size(124, 23);
-			textBox9.TabIndex = 29;
-			// 
-			// frmProjects
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 512);
-			Controls.Add(textBox9);
-			Controls.Add(textBox8);
-			Controls.Add(textBox7);
-			Controls.Add(textBox6);
-			Controls.Add(textBox5);
-			Controls.Add(textBox4);
-			Controls.Add(textBox3);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
-			Controls.Add(button9);
-			Controls.Add(button8);
-			Controls.Add(button7);
-			Controls.Add(button6);
-			Controls.Add(button5);
-			Controls.Add(button4);
-			Controls.Add(button3);
-			Controls.Add(button2);
-			Controls.Add(button1);
-			Controls.Add(label12);
-			Controls.Add(label11);
-			Controls.Add(label10);
-			Controls.Add(label9);
-			Controls.Add(label8);
-			Controls.Add(label7);
-			Controls.Add(label6);
-			Controls.Add(label5);
-			Controls.Add(label4);
-			Controls.Add(label3);
-			Controls.Add(label2);
-			Controls.Add(label1);
-			Name = "frmProjects";
-			Text = "frmProjects";
-			ResumeLayout(false);
-			PerformLayout();
-		}
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            lblTitle = new Label();
+            label3 = new Label();
+            lblGenre = new Label();
+            label5 = new Label();
+            lblDimensionType = new Label();
+            lblDescription = new Label();
+            lblStartDate = new Label();
+            lblEstimatedDate = new Label();
+            lblStatusProject = new Label();
+            btnAdd = new Button();
+            btnSave = new Button();
+            btnDelete = new Button();
+            btnCancel = new Button();
+            btnFirst = new Button();
+            btnPrevious = new Button();
+            btnNext = new Button();
+            btnLast = new Button();
+            txtTitle = new TextBox();
+            txtGenre = new TextBox();
+            txtDescription = new TextBox();
+            txtStartDate = new TextBox();
+            txtEstimatedDate = new TextBox();
+            txtStatusProject = new TextBox();
+            grpProjects = new GroupBox();
+            txtEngine = new TextBox();
+            cmbType = new ComboBox();
+            cmbRating = new ComboBox();
+            txtProjectId = new TextBox();
+            lblProjectId = new Label();
+            errProvider = new ErrorProvider(components);
+            grpProjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
+            SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(94, 105);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(32, 15);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Title";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(446, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(44, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Engine";
+            // 
+            // lblGenre
+            // 
+            lblGenre.AutoSize = true;
+            lblGenre.Location = new Point(94, 132);
+            lblGenre.Name = "lblGenre";
+            lblGenre.Size = new Size(42, 15);
+            lblGenre.TabIndex = 3;
+            lblGenre.Text = "Genre";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(446, 140);
+            label5.Name = "label5";
+            label5.Size = new Size(75, 15);
+            label5.TabIndex = 4;
+            label5.Text = "ESRB Rating";
+            // 
+            // lblDimensionType
+            // 
+            lblDimensionType.AutoSize = true;
+            lblDimensionType.Location = new Point(446, 175);
+            lblDimensionType.Name = "lblDimensionType";
+            lblDimensionType.Size = new Size(92, 15);
+            lblDimensionType.TabIndex = 5;
+            lblDimensionType.Text = "DimensionType";
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(91, 310);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(71, 15);
+            lblDescription.TabIndex = 6;
+            lblDescription.Text = "Description";
+            // 
+            // lblStartDate
+            // 
+            lblStartDate.AutoSize = true;
+            lblStartDate.Location = new Point(89, 166);
+            lblStartDate.Name = "lblStartDate";
+            lblStartDate.Size = new Size(62, 15);
+            lblStartDate.TabIndex = 7;
+            lblStartDate.Text = "StartDate";
+            // 
+            // lblEstimatedDate
+            // 
+            lblEstimatedDate.AutoSize = true;
+            lblEstimatedDate.Location = new Point(91, 238);
+            lblEstimatedDate.Name = "lblEstimatedDate";
+            lblEstimatedDate.Size = new Size(159, 15);
+            lblEstimatedDate.TabIndex = 8;
+            lblEstimatedDate.Text = "Estimated Completion Date";
+            // 
+            // lblStatusProject
+            // 
+            lblStatusProject.AutoSize = true;
+            lblStatusProject.Location = new Point(94, 272);
+            lblStatusProject.Name = "lblStatusProject";
+            lblStatusProject.Size = new Size(126, 15);
+            lblStatusProject.TabIndex = 9;
+            lblStatusProject.Text = "Status Of The Project";
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(128, 430);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(103, 32);
+            btnAdd.TabIndex = 12;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(254, 430);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(103, 32);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(384, 430);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(103, 32);
+            btnDelete.TabIndex = 14;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(513, 430);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(103, 32);
+            btnCancel.TabIndex = 15;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnFirst
+            // 
+            btnFirst.Location = new Point(140, 381);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new Size(103, 32);
+            btnFirst.TabIndex = 17;
+            btnFirst.Text = "First";
+            btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Click += Navigation_Handler;
+            // 
+            // btnPrevious
+            // 
+            btnPrevious.Location = new Point(270, 381);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(103, 32);
+            btnPrevious.TabIndex = 18;
+            btnPrevious.Text = "Prev";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += Navigation_Handler;
+            // 
+            // btnNext
+            // 
+            btnNext.Location = new Point(379, 381);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(103, 32);
+            btnNext.TabIndex = 19;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += Navigation_Handler;
+            // 
+            // btnLast
+            // 
+            btnLast.Location = new Point(500, 381);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new Size(103, 32);
+            btnLast.TabIndex = 20;
+            btnLast.Text = "Last";
+            btnLast.UseVisualStyleBackColor = true;
+            btnLast.Click += Navigation_Handler;
+            // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(188, 102);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(200, 23);
+            txtTitle.TabIndex = 21;
+            // 
+            // txtGenre
+            // 
+            txtGenre.Location = new Point(188, 132);
+            txtGenre.Name = "txtGenre";
+            txtGenre.Size = new Size(124, 23);
+            txtGenre.TabIndex = 22;
+            // 
+            // txtDescription
+            // 
+            txtDescription.Location = new Point(185, 310);
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(462, 23);
+            txtDescription.TabIndex = 26;
+            // 
+            // txtStartDate
+            // 
+            txtStartDate.Location = new Point(188, 167);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.Size = new Size(124, 23);
+            txtStartDate.TabIndex = 27;
+            // 
+            // txtEstimatedDate
+            // 
+            txtEstimatedDate.Location = new Point(270, 238);
+            txtEstimatedDate.Name = "txtEstimatedDate";
+            txtEstimatedDate.Size = new Size(124, 23);
+            txtEstimatedDate.TabIndex = 28;
+            // 
+            // txtStatusProject
+            // 
+            txtStatusProject.Location = new Point(270, 269);
+            txtStatusProject.Name = "txtStatusProject";
+            txtStatusProject.Size = new Size(124, 23);
+            txtStatusProject.TabIndex = 29;
+            // 
+            // grpProjects
+            // 
+            grpProjects.Controls.Add(txtEngine);
+            grpProjects.Controls.Add(cmbType);
+            grpProjects.Controls.Add(cmbRating);
+            grpProjects.Controls.Add(txtProjectId);
+            grpProjects.Controls.Add(lblProjectId);
+            grpProjects.Controls.Add(txtTitle);
+            grpProjects.Controls.Add(btnLast);
+            grpProjects.Controls.Add(btnNext);
+            grpProjects.Controls.Add(txtStatusProject);
+            grpProjects.Controls.Add(btnPrevious);
+            grpProjects.Controls.Add(btnFirst);
+            grpProjects.Controls.Add(btnCancel);
+            grpProjects.Controls.Add(lblTitle);
+            grpProjects.Controls.Add(btnDelete);
+            grpProjects.Controls.Add(txtEstimatedDate);
+            grpProjects.Controls.Add(btnSave);
+            grpProjects.Controls.Add(lblGenre);
+            grpProjects.Controls.Add(btnAdd);
+            grpProjects.Controls.Add(txtStartDate);
+            grpProjects.Controls.Add(lblDimensionType);
+            grpProjects.Controls.Add(txtDescription);
+            grpProjects.Controls.Add(lblDescription);
+            grpProjects.Controls.Add(lblStartDate);
+            grpProjects.Controls.Add(label5);
+            grpProjects.Controls.Add(label3);
+            grpProjects.Controls.Add(lblEstimatedDate);
+            grpProjects.Controls.Add(lblStatusProject);
+            grpProjects.Controls.Add(txtGenre);
+            grpProjects.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grpProjects.Location = new Point(50, 53);
+            grpProjects.Name = "grpProjects";
+            grpProjects.Size = new Size(743, 520);
+            grpProjects.TabIndex = 30;
+            grpProjects.TabStop = false;
+            grpProjects.Text = "Projects";
+            // 
+            // txtEngine
+            // 
+            txtEngine.Location = new Point(575, 97);
+            txtEngine.Name = "txtEngine";
+            txtEngine.Size = new Size(124, 23);
+            txtEngine.TabIndex = 34;
+            // 
+            // cmbType
+            // 
+            cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbType.FormattingEnabled = true;
+            cmbType.Location = new Point(575, 175);
+            cmbType.Name = "cmbType";
+            cmbType.Size = new Size(135, 23);
+            cmbType.TabIndex = 33;
+            // 
+            // cmbRating
+            // 
+            cmbRating.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRating.FormattingEnabled = true;
+            cmbRating.Location = new Point(575, 137);
+            cmbRating.Name = "cmbRating";
+            cmbRating.Size = new Size(135, 23);
+            cmbRating.TabIndex = 32;
+            // 
+            // txtProjectId
+            // 
+            txtProjectId.Location = new Point(331, 41);
+            txtProjectId.Name = "txtProjectId";
+            txtProjectId.Size = new Size(57, 23);
+            txtProjectId.TabIndex = 31;
+            // 
+            // lblProjectId
+            // 
+            lblProjectId.AutoSize = true;
+            lblProjectId.Location = new Point(240, 44);
+            lblProjectId.Name = "lblProjectId";
+            lblProjectId.Size = new Size(63, 15);
+            lblProjectId.TabIndex = 30;
+            lblProjectId.Text = "Project ID";
+            // 
+            // errProvider
+            // 
+            errProvider.ContainerControl = this;
+            // 
+            // frmProjects
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(841, 619);
+            Controls.Add(grpProjects);
+            Name = "frmProjects";
+            Text = "frmProjects";
+            Load += frmProjects_Load;
+            grpProjects.ResumeLayout(false);
+            grpProjects.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).EndInit();
+            ResumeLayout(false);
+        }
 
-		#endregion
-
-		private Label label1;
-		private Label label2;
-		private Label label3;
-		private Label label4;
-		private Label label5;
-		private Label label6;
-		private Label label7;
-		private Label label8;
-		private Label label9;
-		private Label label10;
-		private Label label11;
-		private Label label12;
-		private Button button1;
-		private Button button2;
-		private Button button3;
-		private Button button4;
-		private Button button5;
-		private Button button6;
-		private Button button7;
-		private Button button8;
-		private Button button9;
-		private TextBox textBox1;
-		private TextBox textBox2;
-		private TextBox textBox3;
-		private TextBox textBox4;
-		private TextBox textBox5;
-		private TextBox textBox6;
-		private TextBox textBox7;
-		private TextBox textBox8;
-		private TextBox textBox9;
-	}
+        #endregion
+        private Label lblTitle;
+        private Label label3;
+        private Label lblGenre;
+        private Label label5;
+        private Label lblDimensionType;
+        private Label lblDescription;
+        private Label lblStartDate;
+        private Label lblEstimatedDate;
+        private Label lblStatusProject;
+        private Button btnAdd;
+        private Button btnSave;
+        private Button btnDelete;
+        private Button btnCancel;
+        private Button btnFirst;
+        private Button btnPrevious;
+        private Button btnNext;
+        private Button btnLast;
+        private TextBox txtTitle;
+        private TextBox txtGenre;
+        private TextBox txtDescription;
+        private TextBox txtStartDate;
+        private TextBox txtEstimatedDate;
+        private TextBox txtStatusProject;
+        private GroupBox grpProjects;
+        private TextBox txtProjectId;
+        private Label lblProjectId;
+        private ComboBox cmbType;
+        private ComboBox cmbRating;
+        private TextBox txtEngine;
+        private ErrorProvider errProvider;
+    }
 }
