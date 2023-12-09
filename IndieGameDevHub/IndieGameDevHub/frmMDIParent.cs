@@ -44,6 +44,9 @@ namespace IndieGameDevHub
                 case "browseprojects":
                     childForm = new frmBrowseProjects();
                     break;
+                case "about":
+                    childForm = new frmAbout();
+                    break;
             }
 
             // To only have one child form at a time

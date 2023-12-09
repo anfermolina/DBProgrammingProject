@@ -161,7 +161,7 @@ namespace IndieGameDevHub
                 firstDeveloperId = Convert.ToInt32(navMeta["FirstDeveloperId"]);
                 firstProjectId = Convert.ToInt32(navMeta["FirstProjectId"]);
                 firstContributionId = Convert.ToInt32(navMeta["FirstContributionId"]);
-                
+
                 lastDeveloperId = Convert.ToInt32(navMeta["LastDeveloperId"]);
                 lastProjectId = Convert.ToInt32(navMeta["LastProjectId"]);
                 lastContributionId = Convert.ToInt32(navMeta["LastContributionId"]);
@@ -179,8 +179,8 @@ namespace IndieGameDevHub
             else
             {
 
-                    LoadFirstContributor();
-                
+                LoadFirstContributor();
+
             }
         }
 
@@ -347,7 +347,7 @@ namespace IndieGameDevHub
             {
                 UIUtilities.ClearControls(this.Controls);
 
-                //Load the latest course and Instructors
+                //Load the latest developers and projects
                 LoadProjects();
 
                 LoadDevelopers();
@@ -383,7 +383,7 @@ namespace IndieGameDevHub
         {
             int developerId = Convert.ToInt32(cmbDeveloperId.SelectedValue);
             int projectId = Convert.ToInt32(cmbProjectId.SelectedValue);
-            
+
 
 
 
@@ -412,7 +412,7 @@ namespace IndieGameDevHub
                     MessageBox.Show("Contribution was created");
                     currentDeveloperId = developerId;
                     currentProjectId = projectId;
-                    
+
                     LoadContributionDetails();
                     NavigationState(true);
                     NextPreviousButtonManagement();
@@ -440,7 +440,7 @@ namespace IndieGameDevHub
                 FROM ProjectContributors pc
                 JOIN Projects p ON pc.ProjectProjectId = p.ProjectId
                 WHERE pc.DeveloperDeveloperId = {developerId}
-                AND p.StatusOfTheProject = 'Active'"; 
+                AND p.StatusOfTheProject = 'Active'";
 
             object result = DataAccess.GetValue(sqlCountContribution);
 
@@ -491,20 +491,20 @@ namespace IndieGameDevHub
             }
         }
 
-            private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
             {
-                try
-                {
-                    LoadContributionDetails();
-                    btnAdd.Enabled = true;
-                    btnDelete.Enabled = true;
-                    NavigationState(true);
-                    NextPreviousButtonManagement();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                LoadContributionDetails();
+                btnAdd.Enabled = true;
+                btnDelete.Enabled = true;
+                NavigationState(true);
+                NextPreviousButtonManagement();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

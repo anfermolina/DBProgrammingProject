@@ -37,8 +37,6 @@
             lblStartDate = new Label();
             lblEndDate = new Label();
             txtRole = new TextBox();
-            txtStartDate = new TextBox();
-            txtEndDate = new TextBox();
             btnLast = new Button();
             btnNext = new Button();
             btnPrevious = new Button();
@@ -51,6 +49,8 @@
             cmbDeveloperId = new ComboBox();
             cmbProjectId = new ComboBox();
             errProvider = new ErrorProvider(components);
+            txtStartDate = new DateTimePicker();
+            txtEndDate = new DateTimePicker();
             grpProjectContributor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
@@ -122,22 +122,6 @@
             txtRole.Name = "txtRole";
             txtRole.Size = new Size(211, 23);
             txtRole.TabIndex = 14;
-            // 
-            // txtStartDate
-            // 
-            txtStartDate.Location = new Point(301, 250);
-            txtStartDate.Name = "txtStartDate";
-            txtStartDate.PlaceholderText = "YYYY-MM-DD";
-            txtStartDate.Size = new Size(96, 23);
-            txtStartDate.TabIndex = 15;
-            // 
-            // txtEndDate
-            // 
-            txtEndDate.Location = new Point(504, 250);
-            txtEndDate.Name = "txtEndDate";
-            txtEndDate.PlaceholderText = "YYYY-MM-DD";
-            txtEndDate.Size = new Size(96, 23);
-            txtEndDate.TabIndex = 16;
             // 
             // btnLast
             // 
@@ -221,6 +205,8 @@
             // 
             // grpProjectContributor
             // 
+            grpProjectContributor.Controls.Add(txtEndDate);
+            grpProjectContributor.Controls.Add(txtStartDate);
             grpProjectContributor.Controls.Add(cmbDeveloperId);
             grpProjectContributor.Controls.Add(cmbProjectId);
             grpProjectContributor.Controls.Add(txtContributionId);
@@ -235,9 +221,7 @@
             grpProjectContributor.Controls.Add(btnDelete);
             grpProjectContributor.Controls.Add(btnSave);
             grpProjectContributor.Controls.Add(btnAdd);
-            grpProjectContributor.Controls.Add(txtEndDate);
             grpProjectContributor.Controls.Add(lblRole);
-            grpProjectContributor.Controls.Add(txtStartDate);
             grpProjectContributor.Controls.Add(lblStartDate);
             grpProjectContributor.Controls.Add(txtRole);
             grpProjectContributor.Controls.Add(lblEndDate);
@@ -272,6 +256,20 @@
             errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             errProvider.ContainerControl = this;
             // 
+            // txtStartDate
+            // 
+            txtStartDate.Location = new Point(301, 252);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.Size = new Size(100, 23);
+            txtStartDate.TabIndex = 32;
+            // 
+            // txtEndDate
+            // 
+            txtEndDate.Location = new Point(500, 250);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.Size = new Size(100, 23);
+            txtEndDate.TabIndex = 33;
+            // 
             // frmProjectContributor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -298,8 +296,6 @@
         private Label lblStartDate;
         private Label lblEndDate;
         private TextBox txtRole;
-        private TextBox txtStartDate;
-        private TextBox txtEndDate;
         private Button btnLast;
         private Button btnNext;
         private Button btnPrevious;
@@ -312,5 +308,7 @@
         private ComboBox cmbDeveloperId;
         private ComboBox cmbProjectId;
         private ErrorProvider errProvider;
+        private DateTimePicker txtEndDate;
+        private DateTimePicker txtStartDate;
     }
 }

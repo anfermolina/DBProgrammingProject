@@ -49,16 +49,16 @@
             txtTitle = new TextBox();
             txtGenre = new TextBox();
             txtDescription = new TextBox();
-            txtStartDate = new TextBox();
-            txtEstimatedDate = new TextBox();
             txtStatusProject = new TextBox();
             grpProjects = new GroupBox();
+            txtStartDate = new DateTimePicker();
             txtEngine = new TextBox();
             cmbType = new ComboBox();
             cmbRating = new ComboBox();
             txtProjectId = new TextBox();
             lblProjectId = new Label();
             errProvider = new ErrorProvider(components);
+            txtEstimatedDate = new DateTimePicker();
             grpProjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
@@ -245,20 +245,6 @@
             txtDescription.Size = new Size(462, 23);
             txtDescription.TabIndex = 26;
             // 
-            // txtStartDate
-            // 
-            txtStartDate.Location = new Point(188, 167);
-            txtStartDate.Name = "txtStartDate";
-            txtStartDate.Size = new Size(124, 23);
-            txtStartDate.TabIndex = 27;
-            // 
-            // txtEstimatedDate
-            // 
-            txtEstimatedDate.Location = new Point(270, 238);
-            txtEstimatedDate.Name = "txtEstimatedDate";
-            txtEstimatedDate.Size = new Size(124, 23);
-            txtEstimatedDate.TabIndex = 28;
-            // 
             // txtStatusProject
             // 
             txtStatusProject.Location = new Point(270, 269);
@@ -268,6 +254,8 @@
             // 
             // grpProjects
             // 
+            grpProjects.Controls.Add(txtEstimatedDate);
+            grpProjects.Controls.Add(txtStartDate);
             grpProjects.Controls.Add(txtEngine);
             grpProjects.Controls.Add(cmbType);
             grpProjects.Controls.Add(cmbRating);
@@ -282,11 +270,9 @@
             grpProjects.Controls.Add(btnCancel);
             grpProjects.Controls.Add(lblTitle);
             grpProjects.Controls.Add(btnDelete);
-            grpProjects.Controls.Add(txtEstimatedDate);
             grpProjects.Controls.Add(btnSave);
             grpProjects.Controls.Add(lblGenre);
             grpProjects.Controls.Add(btnAdd);
-            grpProjects.Controls.Add(txtStartDate);
             grpProjects.Controls.Add(lblDimensionType);
             grpProjects.Controls.Add(txtDescription);
             grpProjects.Controls.Add(lblDescription);
@@ -303,6 +289,13 @@
             grpProjects.TabIndex = 30;
             grpProjects.TabStop = false;
             grpProjects.Text = "Projects";
+            // 
+            // txtStartDate
+            // 
+            txtStartDate.Location = new Point(185, 166);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.Size = new Size(139, 23);
+            txtStartDate.TabIndex = 35;
             // 
             // txtEngine
             // 
@@ -349,6 +342,13 @@
             // 
             errProvider.ContainerControl = this;
             // 
+            // txtEstimatedDate
+            // 
+            txtEstimatedDate.Location = new Point(264, 237);
+            txtEstimatedDate.Name = "txtEstimatedDate";
+            txtEstimatedDate.Size = new Size(168, 23);
+            txtEstimatedDate.TabIndex = 36;
+            // 
             // frmProjects
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -385,8 +385,6 @@
         private TextBox txtTitle;
         private TextBox txtGenre;
         private TextBox txtDescription;
-        private TextBox txtStartDate;
-        private TextBox txtEstimatedDate;
         private TextBox txtStatusProject;
         private GroupBox grpProjects;
         private TextBox txtProjectId;
@@ -395,5 +393,7 @@
         private ComboBox cmbRating;
         private TextBox txtEngine;
         private ErrorProvider errProvider;
+        private DateTimePicker txtStartDate;
+        private DateTimePicker txtEstimatedDate;
     }
 }

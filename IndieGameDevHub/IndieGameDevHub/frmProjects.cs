@@ -163,7 +163,7 @@ namespace IndieGameDevHub
 
         private void CreateProject()
         {
-            
+
             string sqlInsertProject = $@"
                 INSERT INTO [dbo].[Projects]
                 (
@@ -272,22 +272,36 @@ namespace IndieGameDevHub
                 {
                     DataRow selectedProject = ds.Tables[0].Rows[0];
 
-                    txtProjectId.Text       = selectedProject["ProjectId"].ToString();
-                    txtTitle.Text           = selectedProject["Title"].ToString();
-                    txtGenre.Text           = selectedProject["Genre"].ToString();
-                    txtEngine.Text          = selectedProject["Engine"].ToString();
-                    cmbRating.Text          = selectedProject["EsrbRating"].ToString();
-                    cmbType.Text            = selectedProject["DimensionType"].ToString();
-                    txtDescription.Text     = selectedProject["Description"].ToString();
-                    txtStartDate.Text       = selectedProject["StartDate"].ToString();
-                    txtEstimatedDate.Text   = selectedProject["EstimatedCompletionDate"].ToString();
-                    txtStatusProject.Text   = selectedProject["StatusOfTheProject"].ToString();
+                    txtProjectId.Text = selectedProject["ProjectId"].ToString();
+                    txtTitle.Text = selectedProject["Title"].ToString();
+                    txtGenre.Text = selectedProject["Genre"].ToString();
+                    txtEngine.Text = selectedProject["Engine"].ToString();
+                    cmbRating.Text = selectedProject["EsrbRating"].ToString();
+                    cmbType.Text = selectedProject["DimensionType"].ToString();
+                    txtDescription.Text = selectedProject["Description"].ToString();
+                    txtStartDate.Text = selectedProject["StartDate"].ToString();
+                    if (selectedProject["EstimatedCompletionDate"] != DBNull.Value)
+                    {
+                        DateTime estimatedCompletionDate = Convert.ToDateTime(selectedProject["EstimatedCompletionDate"]);
+                        if ((DateTime.Now - estimatedCompletionDate).TotalDays > 90)
+                        {
+                            txtStatusProject.Text = "inactive";
+                            
+                        }
+                        else
+                        {
+                            txtStatusProject.Text = selectedProject["StatusOfTheProject"].ToString();
+                        }
+                    }
+                    
+                    txtEstimatedDate.Text = selectedProject["EstimatedCompletionDate"].ToString();
+                    
 
 
-                    firstProjectId      = Convert.ToInt32(ds.Tables[1].Rows[0]["FirstProjectId"]);
-                    previousProjectId   = ds.Tables[1].Rows[0]["PreviousProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousProjectId"]) : (int?)null;
-                    nextProjectId       = ds.Tables[1].Rows[0]["NextProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextProjectId"]) : (int?)null;
-                    lastProjectId       = Convert.ToInt32(ds.Tables[1].Rows[0]["LastProjectId"]);
+                    firstProjectId = Convert.ToInt32(ds.Tables[1].Rows[0]["FirstProjectId"]);
+                    previousProjectId = ds.Tables[1].Rows[0]["PreviousProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousProjectId"]) : (int?)null;
+                    nextProjectId = ds.Tables[1].Rows[0]["NextProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextProjectId"]) : (int?)null;
+                    lastProjectId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastProjectId"]);
                 }
                 else
                 {

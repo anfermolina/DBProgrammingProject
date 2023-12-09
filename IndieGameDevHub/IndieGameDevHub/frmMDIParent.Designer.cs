@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMDIParent));
             menuStrip = new MenuStrip();
             maintenanceToolStripMenuItem = new ToolStripMenuItem();
             mnuProjects = new ToolStripMenuItem();
@@ -49,11 +48,8 @@
             closeAllToolStripMenuItem = new ToolStripMenuItem();
             arrangeIconsToolStripMenuItem = new ToolStripMenuItem();
             helpMenu = new ToolStripMenuItem();
-            contentsToolStripMenuItem = new ToolStripMenuItem();
-            indexToolStripMenuItem = new ToolStripMenuItem();
-            searchToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator8 = new ToolStripSeparator();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
+            mnuAbout = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
@@ -206,44 +202,23 @@
             // 
             // helpMenu
             // 
-            helpMenu.DropDownItems.AddRange(new ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator8, aboutToolStripMenuItem });
+            helpMenu.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator8, mnuAbout });
             helpMenu.Name = "helpMenu";
             helpMenu.Size = new Size(44, 20);
             helpMenu.Text = "&Help";
             // 
-            // contentsToolStripMenuItem
-            // 
-            contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(168, 22);
-            contentsToolStripMenuItem.Text = "&Contents";
-            // 
-            // indexToolStripMenuItem
-            // 
-            indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
-            indexToolStripMenuItem.ImageTransparentColor = Color.Black;
-            indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(168, 22);
-            indexToolStripMenuItem.Text = "&Index";
-            // 
-            // searchToolStripMenuItem
-            // 
-            searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
-            searchToolStripMenuItem.ImageTransparentColor = Color.Black;
-            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(168, 22);
-            searchToolStripMenuItem.Text = "&Search";
-            // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(165, 6);
+            toolStripSeparator8.Size = new Size(177, 6);
             // 
-            // aboutToolStripMenuItem
+            // mnuAbout
             // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(168, 22);
-            aboutToolStripMenuItem.Text = "&About ... ...";
+            mnuAbout.Name = "mnuAbout";
+            mnuAbout.Size = new Size(180, 22);
+            mnuAbout.Tag = "about";
+            mnuAbout.Text = "&About ... ...";
+            mnuAbout.Click += ShowNewForm;
             // 
             // statusStrip
             // 
@@ -288,7 +263,7 @@
         private StatusStrip statusStrip;
         private ToolStripSeparator toolStripSeparator8;
         private ToolStripStatusLabel toolStripStatusLabel;
-        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem mnuAbout;
         private ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private ToolStripMenuItem viewMenu;
         private ToolStripMenuItem toolBarToolStripMenuItem;
@@ -300,9 +275,6 @@
         private ToolStripMenuItem closeAllToolStripMenuItem;
         private ToolStripMenuItem arrangeIconsToolStripMenuItem;
         private ToolStripMenuItem helpMenu;
-        private ToolStripMenuItem contentsToolStripMenuItem;
-        private ToolStripMenuItem indexToolStripMenuItem;
-        private ToolStripMenuItem searchToolStripMenuItem;
         private ToolTip toolTip;
         private ToolStripMenuItem maintenanceToolStripMenuItem;
         private ToolStripMenuItem mnuProjects;
