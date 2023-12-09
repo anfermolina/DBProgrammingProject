@@ -178,17 +178,9 @@ namespace IndieGameDevHub
             }
             else
             {
-                object assignmentCount = DataAccess.GetValue("SELECT COUNT(*) FROM ProjectContributors");
 
-                if (assignmentCount == DBNull.Value)
-                {
-                    MessageBox.Show("No Contributions in the system");
-                }
-                else
-                {
-                    MessageBox.Show("The Contribution no longer exists");
                     LoadFirstContributor();
-                }
+                
             }
         }
 
@@ -391,7 +383,7 @@ namespace IndieGameDevHub
         {
             int developerId = Convert.ToInt32(cmbDeveloperId.SelectedValue);
             int projectId = Convert.ToInt32(cmbProjectId.SelectedValue);
-            int contributionId = Convert.ToInt32(txtContributionId.Text);
+            
 
 
 
@@ -420,7 +412,7 @@ namespace IndieGameDevHub
                     MessageBox.Show("Contribution was created");
                     currentDeveloperId = developerId;
                     currentProjectId = projectId;
-                    currentContributionId = contributionId;
+                    
                     LoadContributionDetails();
                     NavigationState(true);
                     NextPreviousButtonManagement();
