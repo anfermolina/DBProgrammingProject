@@ -153,6 +153,10 @@ namespace IndieGameDevHub
                 cmbProjectId.SelectedValue = ProjectId;
                 cmbDeveloperId.SelectedValue = DeveloperId;
                 txtContributionId.Text = ProjectContributor.ToString();
+                txtRole.Text = selectedContribution["Role"].ToString();
+                txtStartDate.Text = selectedContribution["StartDate"].ToString();
+                txtEndDate.Text = selectedContribution["EndDate"].ToString();
+
 
                 firstDeveloperId = Convert.ToInt32(navMeta["FirstDeveloperId"]);
                 firstProjectId = Convert.ToInt32(navMeta["FirstProjectId"]);
