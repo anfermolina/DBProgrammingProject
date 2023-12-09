@@ -160,7 +160,7 @@ namespace IndieGameDevHub
                 
                 lastDeveloperId = Convert.ToInt32(navMeta["LastDeveloperId"]);
                 lastProjectId = Convert.ToInt32(navMeta["LastProjectId"]);
-                lastContributionId = Convert.ToInt32(navMeta["LastContrinutionId"]);
+                lastContributionId = Convert.ToInt32(navMeta["LastContributionId"]);
 
                 previousDeveloperId = navMeta["PreviousDeveloperId"] != DBNull.Value ? Convert.ToInt32(navMeta["PreviousDeveloperId"]) : (int?)null;
                 previousProjectId = navMeta["PreviousProjectId"] != DBNull.Value ? Convert.ToInt32(navMeta["PreviousProjectId"]) : (int?)null;
