@@ -45,6 +45,11 @@ namespace IndieGameDevHub
 
         private void frmProjectContributor_Load(object sender, EventArgs e)
         {
+            if (LoggedInUserInfo.CurrentDeveloperId != 1)
+            {
+                crudDisable();
+
+            }
             // Load Projects combobox
             LoadProjects();
 
@@ -174,6 +179,7 @@ namespace IndieGameDevHub
                 nextProjectId = navMeta["NextProjectId"] != DBNull.Value ? Convert.ToInt32(navMeta["NextProjectId"]) : (int?)null;
                 nextContributionId = navMeta["NextContributionId"] != DBNull.Value ? Convert.ToInt32(navMeta["NextContributionId"]) : (int?)null;
 
+                ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"Displaying project {currentContributionId}";
 
             }
             else
@@ -241,6 +247,7 @@ namespace IndieGameDevHub
                     currentDeveloperId = firstDeveloperId;
                     currentProjectId = firstProjectId;
                     currentContributionId = firstContributionId;
+                    ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Browsing projects";
                     break;
                 case "btnLast":
                     currentDeveloperId = lastDeveloperId;
@@ -346,6 +353,8 @@ namespace IndieGameDevHub
             try
             {
                 UIUtilities.ClearControls(this.Controls);
+                ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Adding";
+           
 
                 //Load the latest developers and projects
                 LoadProjects();
@@ -409,6 +418,9 @@ namespace IndieGameDevHub
 
                 if (rowsAffected == 1)
                 {
+                    string txtstate = "Creating";
+                    ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = txtstate;
+                    ProgressBar(txtstate);
                     MessageBox.Show("Contribution was created");
                     currentDeveloperId = developerId;
                     currentProjectId = projectId;
@@ -471,7 +483,10 @@ namespace IndieGameDevHub
                 int rowsAffected = DataAccess.ExecuteNonQuery(sqlDeleteContribution);
 
                 if (rowsAffected == 1)
+                    
                 {
+                    string txtstate = "Deleting";
+                    ProgressBar(txtstate);
                     MessageBox.Show("Contribution was deleted. Click Ok to load first Contribution if Any");
 
                     LoadFirstContributor();
@@ -505,6 +520,43 @@ namespace IndieGameDevHub
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+
+        /// <summary>
+		/// Animate the progress bar
+		/// This is ui thread blocking. Ok for this application.
+		/// </summary>
+		private void ProgressBar(string txtstate)
+        {
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"{txtstate} ...";
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 0;
+            // ((frmMDIParent)this.MdiParent).StatusStipLabel.Refresh();
+
+            while (((frmMDIParent)this.MdiParent).PrgBar.Value < ((frmMDIParent)this.MdiParent).PrgBar.Maximum)
+            {
+                Thread.Sleep(15);
+                ((frmMDIParent)this.MdiParent).PrgBar.Value += 1;
+            }
+
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 100;
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Processed";
+        }
+        /// <summary>
+        /// Disable the crud buttons
+        /// </summary>
+        private void crudDisable()
+        {
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+
+
         }
     }
 }

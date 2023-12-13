@@ -53,6 +53,7 @@
             statusStrip = new StatusStrip();
             toolStripStatusLabel = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
+            toolStripProgressBar1 = new ToolStripProgressBar();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -210,19 +211,19 @@
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(177, 6);
+            toolStripSeparator8.Size = new Size(128, 6);
             // 
             // mnuAbout
             // 
             mnuAbout.Name = "mnuAbout";
-            mnuAbout.Size = new Size(180, 22);
+            mnuAbout.Size = new Size(131, 22);
             mnuAbout.Tag = "about";
             mnuAbout.Text = "&About ... ...";
             mnuAbout.Click += ShowNewForm;
             // 
             // statusStrip
             // 
-            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
+            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel, toolStripProgressBar1 });
             statusStrip.Location = new Point(0, 501);
             statusStrip.Name = "statusStrip";
             statusStrip.Padding = new Padding(1, 0, 16, 0);
@@ -236,10 +237,16 @@
             toolStripStatusLabel.Size = new Size(39, 17);
             toolStripStatusLabel.Text = "Status";
             // 
+            // toolStripProgressBar1
+            // 
+            toolStripProgressBar1.Name = "toolStripProgressBar1";
+            toolStripProgressBar1.Size = new Size(100, 16);
+            // 
             // frmMDIParent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(737, 523);
             Controls.Add(statusStrip);
             Controls.Add(menuStrip);
@@ -247,6 +254,7 @@
             MainMenuStrip = menuStrip;
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmMDIParent";
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "Indie Game Developer Hub";
             Load += frmMDIParent_Load;
             menuStrip.ResumeLayout(false);
@@ -283,6 +291,7 @@
         private ToolStripMenuItem mnuContributors;
         private ToolStripMenuItem projectsToolStripMenuItem;
         private ToolStripMenuItem developersToolStripMenuItem;
+        private ToolStripProgressBar toolStripProgressBar1;
     }
 }
 

@@ -14,6 +14,18 @@ namespace IndieGameDevHub
     {
         private int childFormNumber = 0;
 
+        public ToolStripStatusLabel StatusStipLabel
+        {
+            get { return toolStripStatusLabel; }
+            set { toolStripStatusLabel = value; }
+        }
+
+        public ToolStripProgressBar PrgBar
+        {
+            get { return toolStripProgressBar1; }
+            set { toolStripProgressBar1 = value; }
+        }
+
         public frmMDIParent()
         {
             InitializeComponent();
@@ -31,9 +43,6 @@ namespace IndieGameDevHub
                     break;
                 case "developers":
                     childForm = new frmDevelopers();
-                    break;
-                case "browse":
-                    childForm = new frmBrowse();
                     break;
                 case "contributors":
                     childForm = new frmProjectContributor();

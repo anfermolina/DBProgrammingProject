@@ -51,6 +51,7 @@
             txtDescription = new TextBox();
             txtStatusProject = new TextBox();
             grpProjects = new GroupBox();
+            txtEstimatedDate = new DateTimePicker();
             txtStartDate = new DateTimePicker();
             txtEngine = new TextBox();
             cmbType = new ComboBox();
@@ -58,7 +59,6 @@
             txtProjectId = new TextBox();
             lblProjectId = new Label();
             errProvider = new ErrorProvider(components);
-            txtEstimatedDate = new DateTimePicker();
             grpProjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
@@ -230,6 +230,8 @@
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(200, 23);
             txtTitle.TabIndex = 21;
+            txtTitle.Tag = "title";
+            txtTitle.Validating += txt_Validating;
             // 
             // txtGenre
             // 
@@ -237,6 +239,8 @@
             txtGenre.Name = "txtGenre";
             txtGenre.Size = new Size(124, 23);
             txtGenre.TabIndex = 22;
+            txtGenre.Tag = "genre";
+            txtGenre.Validating += txt_Validating;
             // 
             // txtDescription
             // 
@@ -244,6 +248,8 @@
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(462, 23);
             txtDescription.TabIndex = 26;
+            txtDescription.Tag = "description";
+            txtDescription.Validating += txt_Validating;
             // 
             // txtStatusProject
             // 
@@ -251,9 +257,12 @@
             txtStatusProject.Name = "txtStatusProject";
             txtStatusProject.Size = new Size(124, 23);
             txtStatusProject.TabIndex = 29;
+            txtStatusProject.Tag = "status";
+            txtStatusProject.Validating += txt_Validating;
             // 
             // grpProjects
             // 
+            grpProjects.BackgroundImage = Properties.Resources.backgroundImage_bn;
             grpProjects.Controls.Add(txtEstimatedDate);
             grpProjects.Controls.Add(txtStartDate);
             grpProjects.Controls.Add(txtEngine);
@@ -290,8 +299,18 @@
             grpProjects.TabStop = false;
             grpProjects.Text = "Projects";
             // 
+            // txtEstimatedDate
+            // 
+            txtEstimatedDate.Format = DateTimePickerFormat.Short;
+            txtEstimatedDate.Location = new Point(264, 237);
+            txtEstimatedDate.Name = "txtEstimatedDate";
+            txtEstimatedDate.Size = new Size(168, 23);
+            txtEstimatedDate.TabIndex = 36;
+            txtEstimatedDate.Tag = "estimated completion";
+            // 
             // txtStartDate
             // 
+            txtStartDate.Format = DateTimePickerFormat.Short;
             txtStartDate.Location = new Point(185, 166);
             txtStartDate.Name = "txtStartDate";
             txtStartDate.Size = new Size(139, 23);
@@ -303,6 +322,8 @@
             txtEngine.Name = "txtEngine";
             txtEngine.Size = new Size(124, 23);
             txtEngine.TabIndex = 34;
+            txtEngine.Tag = "engine";
+            txtEngine.Validating += txt_Validating;
             // 
             // cmbType
             // 
@@ -342,21 +363,16 @@
             // 
             errProvider.ContainerControl = this;
             // 
-            // txtEstimatedDate
-            // 
-            txtEstimatedDate.Location = new Point(264, 237);
-            txtEstimatedDate.Name = "txtEstimatedDate";
-            txtEstimatedDate.Size = new Size(168, 23);
-            txtEstimatedDate.TabIndex = 36;
-            // 
             // frmProjects
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackgroundImage = Properties.Resources.backgroundImage;
             ClientSize = new Size(841, 619);
             Controls.Add(grpProjects);
             Name = "frmProjects";
-            Text = "frmProjects";
+            Text = "Projects";
             Load += frmProjects_Load;
             grpProjects.ResumeLayout(false);
             grpProjects.PerformLayout();

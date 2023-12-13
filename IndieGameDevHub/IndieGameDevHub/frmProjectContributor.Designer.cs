@@ -46,11 +46,11 @@
             btnSave = new Button();
             btnAdd = new Button();
             grpProjectContributor = new GroupBox();
+            txtEndDate = new DateTimePicker();
+            txtStartDate = new DateTimePicker();
             cmbDeveloperId = new ComboBox();
             cmbProjectId = new ComboBox();
             errProvider = new ErrorProvider(components);
-            txtStartDate = new DateTimePicker();
-            txtEndDate = new DateTimePicker();
             grpProjectContributor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
@@ -205,6 +205,7 @@
             // 
             // grpProjectContributor
             // 
+            grpProjectContributor.BackgroundImage = Properties.Resources.backgroundImage_bn;
             grpProjectContributor.Controls.Add(txtEndDate);
             grpProjectContributor.Controls.Add(txtStartDate);
             grpProjectContributor.Controls.Add(cmbDeveloperId);
@@ -233,6 +234,22 @@
             grpProjectContributor.TabStop = false;
             grpProjectContributor.Text = "Project Contributors";
             // 
+            // txtEndDate
+            // 
+            txtEndDate.Format = DateTimePickerFormat.Short;
+            txtEndDate.Location = new Point(500, 250);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.Size = new Size(100, 23);
+            txtEndDate.TabIndex = 33;
+            // 
+            // txtStartDate
+            // 
+            txtStartDate.Format = DateTimePickerFormat.Short;
+            txtStartDate.Location = new Point(301, 252);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.Size = new Size(100, 23);
+            txtStartDate.TabIndex = 32;
+            // 
             // cmbDeveloperId
             // 
             cmbDeveloperId.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -256,28 +273,16 @@
             errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             errProvider.ContainerControl = this;
             // 
-            // txtStartDate
-            // 
-            txtStartDate.Location = new Point(301, 252);
-            txtStartDate.Name = "txtStartDate";
-            txtStartDate.Size = new Size(100, 23);
-            txtStartDate.TabIndex = 32;
-            // 
-            // txtEndDate
-            // 
-            txtEndDate.Location = new Point(500, 250);
-            txtEndDate.Name = "txtEndDate";
-            txtEndDate.Size = new Size(100, 23);
-            txtEndDate.TabIndex = 33;
-            // 
             // frmProjectContributor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackgroundImage = Properties.Resources.backgroundImage;
             ClientSize = new Size(957, 671);
             Controls.Add(grpProjectContributor);
             Name = "frmProjectContributor";
-            Text = "ProjectContributor";
+            Text = "Project Contributor";
             Load += frmProjectContributor_Load;
             grpProjectContributor.ResumeLayout(false);
             grpProjectContributor.PerformLayout();

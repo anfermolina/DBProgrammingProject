@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace IndieGameDevHub
 {
-	public partial class frmLogin : Form
-	{
-		public frmLogin()
-		{
-			InitializeComponent();
-		}
+    public partial class frmLogin : Form
+    {
+        public frmLogin()
+        {
+            InitializeComponent();
+        }
 
 
-		int currentLoginId = 1;
-        
+        int currentLoginId = 1;
 
-		private void frmLogin_Load(object sender, EventArgs e)
-		{
-			this.Text = $"{Application.ProductName} - Login";
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.Text = $"{Application.ProductName} - Login";
             LoadLoginDetails();
             //txtUser.Text = Environment.UserName;
-		}
+        }
 
         private void LoadLoginDetails()
         {
@@ -36,7 +36,7 @@ namespace IndieGameDevHub
             };
 
             DataSet ds = new DataSet();
-			ds = DataAccess.GetData(sqlStatements);
+            ds = DataAccess.GetData(sqlStatements);
 
             if (ds.Tables[0].Rows.Count == 1)
             {
@@ -47,8 +47,8 @@ namespace IndieGameDevHub
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
-		{
-			/*
+        {
+            /*
 			if (chkShowPassword.Checked)
 			{
 				txtPassword.UseSystemPasswordChar = false;
@@ -59,31 +59,31 @@ namespace IndieGameDevHub
 			}
 			*/
 
-			txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
-		}
+            txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
+        }
 
-		private void btnLogin_Click(object sender, EventArgs e)
-		{
-			if (isRightLogin())
-			{
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (isRightLogin())
+            {
                 // success
-                getDeveloperId() ;
-				DialogResult = DialogResult.OK;
-                
-            }
-			else
-			{
-				// Failure
-				DialogResult = DialogResult.Abort;
-			}
+                getDeveloperId();
+                DialogResult = DialogResult.OK;
 
-		}
+            }
+            else
+            {
+                // Failure
+                DialogResult = DialogResult.Abort;
+            }
+
+        }
 
         private void getDeveloperId()
         {
             string currentUser = txtUser.Text;
             string currentPassword = txtPassword.Text;
-           
+
             string[] sqlStatements = new string[]
             {
                 $@"	SELECT DeveloperDeveloperId 
@@ -141,11 +141,37 @@ namespace IndieGameDevHub
 
 
 
-        
+
 
         private void btnCancel_Click(object sender, EventArgs e)
-		{
-			DialogResult = DialogResult.Cancel;
-		}
-	}
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+
+        /// <summary>
+        /// TextBox validation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            string txtBoxName = txt.Tag.ToString();
+            string errMsg = null;
+            bool failedValidation = false;
+
+            if (txt.Text == string.Empty)
+            {
+                errMsg = $"{txtBoxName} is required";
+                failedValidation = true;
+            }
+
+
+
+            e.Cancel = failedValidation;
+
+            errProvider.SetError(txt, errMsg);
+        }
+    }
 }

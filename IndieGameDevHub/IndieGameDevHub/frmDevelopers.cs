@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using UT = IndieGameDevHub.UIUtilities;
 
 namespace IndieGameDevHub
@@ -35,6 +36,11 @@ namespace IndieGameDevHub
         /// <param name="e"></param>
         private void frmDevelopers_Load(object sender, EventArgs e)
         {
+            if (LoggedInUserInfo.CurrentDeveloperId != 1)
+            {
+                crudDisable();
+                
+            }
             LoadFirstDeveloper();
         }
 
@@ -127,7 +133,9 @@ namespace IndieGameDevHub
                     FROM Developers
                 ) AS q
                 WHERE q.DeveloperId = {currentDeveloperId}
-                ORDER BY q.LastName,q.FirstName"
+                ORDER BY q.LastName,q.FirstName".Replace(System.Environment.NewLine," "),
+                $"SELECT COUNT(DeveloperId) as DeveloperCount FROM Developers"
+
            };
 
 
@@ -159,6 +167,10 @@ namespace IndieGameDevHub
                 previousDeveloperId = ds.Tables[1].Rows[0]["PreviousDeveloperId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousDeveloperId"]) : (int?)null;
                 nextDeveloperId = ds.Tables[1].Rows[0]["NextDeveloperId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextDeveloperId"]) : (int?)null;
                 lastDeveloperId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastDeveloperId"]);
+
+
+                ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"Displaying developer {currentDeveloperId} of {ds.Tables[2].Rows[0]["DeveloperCount"]} developers";
+                NextPreviousButtonManagement();
             }
             else
             {
@@ -199,11 +211,13 @@ namespace IndieGameDevHub
         private void Navigation_Handler(object sender, EventArgs e)
         {
             Button b = (Button)sender;
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = String.Empty;
 
             switch (b.Name)
             {
                 case "btnFirst":
                     currentDeveloperId = firstDeveloperId;
+                    ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Browsing developers";
                     break;
                 case "btnLast":
                     currentDeveloperId = lastDeveloperId;
@@ -224,7 +238,11 @@ namespace IndieGameDevHub
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Add a new Developer";
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = " ";
+
             UT.ClearControls(this.grpDevelopers.Controls);
+
 
             btnSave.Text = "Create";
             btnAdd.Enabled = false;
@@ -269,6 +287,9 @@ namespace IndieGameDevHub
 
                 if (rowsAffectedDev == 1 && rowsAffectedLogin == 1)
                 {
+                    //((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Deleting";
+                    string txtstate = "Deleting";
+                    ProgressBar(txtstate);
                     MessageBox.Show($"DeveloperId: {txtDeveloperId.Text} was deleted");
                     LoadFirstDeveloper();
                 }
@@ -346,6 +367,9 @@ namespace IndieGameDevHub
             if (rowsAffected == 1)
             {
                 MessageBox.Show($"InstructorId: {txtDeveloperId.Text} changes saved");
+                string txtstate = "Saving";
+                ProgressBar(txtstate);
+                ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"InstructorId: {txtDeveloperId.Text} changes saved";
             }
             else
             {
@@ -395,7 +419,9 @@ namespace IndieGameDevHub
                 ";
 
                 int rowsAffectedLogin = DataAccess.ExecuteNonQuery(sqlInsertLoginDeveloper);
-
+                string txtstate = "Creating";
+                ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = txtstate;
+                ProgressBar(txtstate);
                 if (rowsAffectedLogin == 1)
                 {
                     MessageBox.Show("Developer and Login info was created");
@@ -438,5 +464,41 @@ namespace IndieGameDevHub
 
             errProvider.SetError(txt, errMsg);
         }
+
+        /// <summary>
+		/// Animate the progress bar
+		/// This is ui thread blocking. Ok for this application.
+		/// </summary>
+		private void ProgressBar(string txtstate)
+        {
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"{txtstate} ...";
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 0;
+            // ((frmMDIParent)this.MdiParent).StatusStipLabel.Refresh();
+
+            while (((frmMDIParent)this.MdiParent).PrgBar.Value < ((frmMDIParent)this.MdiParent).PrgBar.Maximum)
+            {
+                Thread.Sleep(15);
+                ((frmMDIParent)this.MdiParent).PrgBar.Value += 1;
+            }
+
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 100;
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Processed";
+        }
+        /// <summary>
+        /// Disable the crud buttons
+        /// </summary>
+        private void crudDisable()
+        {
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            
+            
+
+        }
+
     }
 }

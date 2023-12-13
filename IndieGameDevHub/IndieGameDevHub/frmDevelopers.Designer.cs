@@ -261,6 +261,7 @@
             // 
             // grpDevelopers
             // 
+            grpDevelopers.BackgroundImage = Properties.Resources.backgroundImage_bn;
             grpDevelopers.Controls.Add(btnFirst);
             grpDevelopers.Controls.Add(txtWebsite);
             grpDevelopers.Controls.Add(lblFirstName);
@@ -300,10 +301,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackgroundImage = Properties.Resources.backgroundImage;
             ClientSize = new Size(956, 520);
             Controls.Add(grpDevelopers);
             Name = "frmDevelopers";
-            Text = "frmDevelopers";
+            Text = "DEVELOPERS";
             Load += frmDevelopers_Load;
             grpDevelopers.ResumeLayout(false);
             grpDevelopers.PerformLayout();

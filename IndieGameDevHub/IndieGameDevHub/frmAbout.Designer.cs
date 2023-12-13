@@ -64,6 +64,8 @@
             // 
             // grpAbout
             // 
+            grpAbout.BackColor = SystemColors.Control;
+            grpAbout.BackgroundImage = Properties.Resources.backgroundImage_bn;
             grpAbout.Controls.Add(lblCompany);
             grpAbout.Controls.Add(lblProduct);
             grpAbout.Controls.Add(lblVersion);
@@ -79,6 +81,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.IndieGameDev3;
             ClientSize = new Size(551, 449);
             Controls.Add(grpAbout);
             Name = "frmAbout";

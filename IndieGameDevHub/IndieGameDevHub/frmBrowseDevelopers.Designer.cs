@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             cmbDeveloperId = new ComboBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            grpBrowseDevelopers = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            grpBrowseDevelopers.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(299, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 28);
-            label1.TabIndex = 0;
-            label1.Text = "Browse Developers";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(154, 126);
+            label2.Location = new Point(59, 96);
             label2.Name = "label2";
             label2.Size = new Size(103, 15);
             label2.TabIndex = 1;
@@ -59,14 +50,14 @@
             // 
             cmbDeveloperId.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDeveloperId.FormattingEnabled = true;
-            cmbDeveloperId.Location = new Point(285, 123);
+            cmbDeveloperId.Location = new Point(190, 93);
             cmbDeveloperId.Name = "cmbDeveloperId";
             cmbDeveloperId.Size = new Size(270, 23);
             cmbDeveloperId.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Location = new Point(344, 379);
+            button1.Location = new Point(249, 349);
             button1.Name = "button1";
             button1.Size = new Size(103, 37);
             button1.TabIndex = 8;
@@ -77,37 +68,48 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(171, 175);
+            dataGridView1.Location = new Point(95, 144);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(459, 187);
+            dataGridView1.Size = new Size(441, 187);
             dataGridView1.TabIndex = 9;
+            // 
+            // grpBrowseDevelopers
+            // 
+            grpBrowseDevelopers.BackgroundImage = Properties.Resources.backgroundImage_bn;
+            grpBrowseDevelopers.Controls.Add(dataGridView1);
+            grpBrowseDevelopers.Controls.Add(label2);
+            grpBrowseDevelopers.Controls.Add(button1);
+            grpBrowseDevelopers.Controls.Add(cmbDeveloperId);
+            grpBrowseDevelopers.Location = new Point(105, 50);
+            grpBrowseDevelopers.Name = "grpBrowseDevelopers";
+            grpBrowseDevelopers.Size = new Size(622, 465);
+            grpBrowseDevelopers.TabIndex = 10;
+            grpBrowseDevelopers.TabStop = false;
+            grpBrowseDevelopers.Text = "Browse Developers";
             // 
             // frmBrowseDevelopers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(cmbDeveloperId);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            BackgroundImage = Properties.Resources.backgroundImage;
+            ClientSize = new Size(843, 599);
+            Controls.Add(grpBrowseDevelopers);
             Name = "frmBrowseDevelopers";
             Tag = "";
-            Text = "frmBrowseDevelopers";
+            Text = "Browse Developers";
             Load += frmBrowseDevelopers_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            grpBrowseDevelopers.ResumeLayout(false);
+            grpBrowseDevelopers.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private ComboBox cmbDeveloperId;
         private Button button1;
         private DataGridView dataGridView1;
+        private GroupBox grpBrowseDevelopers;
     }
 }

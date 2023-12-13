@@ -29,6 +29,7 @@ namespace IndieGameDevHub
         {
             UT.ClearControls(this.grpProjects.Controls);
 
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Adding";
             btnSave.Text = "Create";
             btnAdd.Enabled = false;
             btnDelete.Enabled = false;
@@ -62,21 +63,32 @@ namespace IndieGameDevHub
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string sql = $@"
+            try
+            {
+
+
+                string sql = $@"
                 DELETE FROM Projects WHERE ProjectId = {currentProjectId}
             ";
 
-            int rowsAffected = DataAccess.ExecuteNonQuery(sql);
+                int rowsAffected = DataAccess.ExecuteNonQuery(sql);
 
-            if (rowsAffected == 1)
-            {
-                MessageBox.Show($"ProjectId: {txtProjectId.Text} was deleted");
-                LoadFirstProject();
+                if (rowsAffected == 1)
+                {
+                    string txtstate = "Deleting";
+                    ProgressBar(txtstate);
+                    MessageBox.Show($"ProjectId: {txtProjectId.Text} was deleted");
+                    LoadFirstProject();
+                }
+                else if (rowsAffected == 0)
+                {
+                    MessageBox.Show($"ProjectId: {txtProjectId.Text} does not exist. May already have been delete.");
+                    LoadFirstProject();
+                }
             }
-            else if (rowsAffected == 0)
+            catch (Exception ex)
             {
-                MessageBox.Show($"ProjectId: {txtProjectId.Text} does not exist. May already have been delete.");
-                LoadFirstProject();
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -96,6 +108,11 @@ namespace IndieGameDevHub
         {
             try
             {
+                if (LoggedInUserInfo.CurrentDeveloperId != 1)
+                {
+                    crudDisable();
+
+                }
                 // Load ESRB Rating combobox
                 LoadRating();
 
@@ -153,6 +170,8 @@ namespace IndieGameDevHub
 
             if (rowsAffected == 1)
             {
+                string txtstate = "Saving";
+                ProgressBar(txtstate);
                 MessageBox.Show($"ProjectId: {txtProjectId.Text} changes saved");
             }
             else
@@ -195,6 +214,8 @@ namespace IndieGameDevHub
 
             if (rowsAffected == 1)
             {
+                string txtstate = "Creating";
+                ProgressBar(txtstate);
                 MessageBox.Show("Project was created");
                 btnCancel_Click(null, null);
                 NextPreviousButtonManagement();
@@ -286,22 +307,25 @@ namespace IndieGameDevHub
                         if ((DateTime.Now - estimatedCompletionDate).TotalDays > 90)
                         {
                             txtStatusProject.Text = "inactive";
-                            
+
                         }
                         else
                         {
                             txtStatusProject.Text = selectedProject["StatusOfTheProject"].ToString();
                         }
                     }
-                    
+
                     txtEstimatedDate.Text = selectedProject["EstimatedCompletionDate"].ToString();
-                    
+
 
 
                     firstProjectId = Convert.ToInt32(ds.Tables[1].Rows[0]["FirstProjectId"]);
                     previousProjectId = ds.Tables[1].Rows[0]["PreviousProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["PreviousProjectId"]) : (int?)null;
                     nextProjectId = ds.Tables[1].Rows[0]["NextProjectId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextProjectId"]) : (int?)null;
                     lastProjectId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastProjectId"]);
+
+                    ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"Displaying Project {currentProjectId}";
+                    NextPreviousButtonManagement();
                 }
                 else
                 {
@@ -341,6 +365,7 @@ namespace IndieGameDevHub
             {
                 case "btnFirst":
                     currentProjectId = firstProjectId;
+                    ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Browsing projects";
                     break;
                 case "btnLast":
                     currentProjectId = lastProjectId;
@@ -406,5 +431,40 @@ namespace IndieGameDevHub
         }
 
         #endregion
+
+        /// <summary>
+        /// Animate the progress bar
+        /// This is ui thread blocking. Ok for this application.
+        /// </summary>
+        private void ProgressBar(string txtstate)
+        {
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = $"{txtstate} ...";
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 0;
+            // ((frmMDIParent)this.MdiParent).StatusStipLabel.Refresh();
+
+            while (((frmMDIParent)this.MdiParent).PrgBar.Value < ((frmMDIParent)this.MdiParent).PrgBar.Maximum)
+            {
+                Thread.Sleep(15);
+                ((frmMDIParent)this.MdiParent).PrgBar.Value += 1;
+            }
+
+            ((frmMDIParent)this.MdiParent).PrgBar.Value = 100;
+
+            ((frmMDIParent)this.MdiParent).StatusStipLabel.Text = "Processed";
+        }
+        /// <summary>
+        /// Disable the crud buttons
+        /// </summary>
+        private void crudDisable()
+        {
+            btnAdd.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+
+
+        }
     }
 }

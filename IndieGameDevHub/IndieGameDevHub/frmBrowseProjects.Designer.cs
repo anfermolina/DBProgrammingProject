@@ -57,6 +57,7 @@
             // 
             // grpBrowseProjects
             // 
+            grpBrowseProjects.BackgroundImage = Properties.Resources.backgroundImage_bn;
             grpBrowseProjects.Controls.Add(btnUpdate);
             grpBrowseProjects.Controls.Add(dataGridView1);
             grpBrowseProjects.Controls.Add(cmbProjectId);
@@ -81,21 +82,22 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(70, 108);
+            dataGridView1.Location = new Point(145, 99);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(579, 173);
+            dataGridView1.Size = new Size(400, 173);
             dataGridView1.TabIndex = 9;
             // 
             // frmBrowseProjects
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.backgroundImage;
             ClientSize = new Size(800, 450);
             Controls.Add(grpBrowseProjects);
             Name = "frmBrowseProjects";
             Tag = "";
-            Text = "frmBrowseProjects";
+            Text = "Browse Projects";
             Load += frmBrowseProjects_Load;
             grpBrowseProjects.ResumeLayout(false);
             grpBrowseProjects.PerformLayout();
